@@ -1,4 +1,9 @@
-<p><span class="text-green">{{ correctInput }}</span><span class="text-red">{{ incorrectInput }}</span><span>{{ unmatchedInput }}</span></p>
+<p class="string-container"><span class="string-overlay text-green">{{ correctInputDisplay }}</span><span class="string-overlay text-red">{{ incorrectInputDisplay }}</span><span class="string-overlay">{{ unmatchedInputDisplay }}</span></p>
 <div class="field">
-    <input class="input" type="text" (change)="updateDisplay()" />
+    <input class="input" type="text" (input)="updateDisplay($event.target.value)" />
 </div>
+@if (solved) {
+    <div class="box has-text-centered message">
+        <h1 class="title">You Win!</h1>
+    </div>
+}

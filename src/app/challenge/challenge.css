@@ -1,0 +1,36 @@
+.text-green {
+    color: green;
+}
+
+.text-red {
+    color: red;
+}
+
+.string-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: 'Consolas', 'Courier New', monospace;
+  /* preserve spaces but allow wrapping to fit parent (.is-one-third) */
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 5.5rem;
+}
+    
+.string-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+/* Preserve spaces on spans but allow wrapping (inherit from container) */
+.string-container span {
+  white-space: inherit;
+}
+:host {
+    display: flex;
+    flex-direction: column;
+}
