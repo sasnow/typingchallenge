@@ -17,6 +17,7 @@ export class Challenge {
   incorrectInputDisplay: string = '';
   unmatchedInputDisplay: string = this.prompt;
   solved: boolean = false;
+  enteredText: string = '';
 
   updateDisplay(input: string): void {
     console.log(this.prompt);
@@ -39,6 +40,24 @@ export class Challenge {
     if (this.correctInputDisplay === this.prompt) {
       alert('Congratulations! You have completed the challenge.');
       this.solved = true;
+    }
+  }
+
+  updateEnteredText(input: string): void {
+    this.enteredText = input;
+    if (this.enteredText === this.prompt) {
+      alert('Congratulations! You have completed the challenge.');
+      this.solved = true;
+    }
+  }
+
+  compareLetters(promptLetter: string, enteredLetter: string): string {
+    if (enteredLetter === undefined) {
+      return 'text-white';
+    } else if (promptLetter === enteredLetter) {
+      return 'text-green';
+    } else {
+      return 'text-red';
     }
   }
 }
